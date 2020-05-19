@@ -76,7 +76,7 @@ body {
   font-family: "Roboto Light";
 }
 .banner-wrap h1,
-h2,
+span.logo,
 p {
   text-align: center;
   color: #ffffff;
@@ -85,21 +85,27 @@ h1,
 h2 {
   font-family: "Montserrat Bold";
 }
-.banner-wrap h2 {
-  margin-bottom: 40px;
+
+span.logo {
+  /* display: block; */
+  font-size: 20px;
+  text-transform: uppercase;
+  /* font-family: "Montserrat Bold"; */
+}
+.banner-wrap {
+  background-image: url("../img/mobile/banner.png"); /* to show on screens less than 320 */
+  /* background-color: black; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  margin-bottom: 75px;
 }
 .banner-wrap h1 {
-  margin-bottom: 20px;
   text-transform: uppercase;
   font-family: "Montserrat Bold";
-  font-size: 30px;
 }
-.banner-wrap p {
-  font-size: 1.125rem;
-  max-width: 216px;
-  margin: 0 auto 20px auto;
-  /* font-family: "Roboto Light"; */
-}
+
 a.button {
   text-align: center;
   display: block;
@@ -113,71 +119,197 @@ a.button {
   color: #ffffff;
   border-radius: 25px;
 }
-nav a {
+nav button,
+span.logo {
+  box-sizing: border-box;
   font-family: "Montserrat Bold";
-  font-size: 0.875rem;
   display: inline-block;
   vertical-align: middle;
-  line-height: 36px;
-  width: 96px;
   text-decoration: none;
-  color: #ffffff;
   text-align: center;
+}
+nav button {
+  font-size: 0.875rem;
+  line-height: 36px;
+  height: 40px;
+  color: #ffffff;
+  width: 100px;
+  border: 2px solid transparent;
+  background-color: transparent;
 }
 
 .signup {
-  border: 2px solid white;
+  border-color: white;
   border-radius: 25px;
 }
 
 nav {
   display: inline-flex;
-  justify-content: center;
-  align-items: flex-end;
-  width: 100%;
-  height: 57px;
-  margin-bottom: 119px;
 }
-
-@media screen and (min-width: 320px) and (max-width: 767px) {
+/* MOBILE */
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .main-screen {
+    display: flex;
+    text-align: center;
+  }
+  .main-screen ul {
+    padding-bottom: 21px;
+  }
+  .main-screen h2 {
+    margin-bottom: 22px;
+  }
+  .main-screen ul li {
+    max-width: 200px;
+  }
   .banner-wrap {
     background-image: url("../img/mobile/banner.png");
-    /* background-color: black; */
-    background-size: cover;
-    width: 100%;
-    height: auto;
     padding-bottom: 138px;
-    margin-bottom: 75px;
+  }
+  a.button {
+    width: 225px;
+  }
+  .banner-wrap h1 {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  .banner-wrap p {
+    font-size: 1.125rem;
+    margin: 0 auto 20px auto;
+  }
+
+  nav {
+    margin-bottom: 119px;
+  }
+  .logo {
+    margin-bottom: 40px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .logo {
+    display: inline-flex;
+  }
+  nav {
+    margin-top: 20px;
+    justify-content: center;
+    margin-bottom: 119px;
   }
 }
+/* TABLET */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .banner-wrap {
+    background-image: url("../img/tablet/banner.png");
+    background-color: rgb(26, 25, 21);
+    padding-bottom: 235px;
+  }
 
+  .banner-wrap p {
+    font-size: 24px;
+    margin: 0 auto 38px auto;
+    /* font-family: "Roboto Light"; */
+  }
+  .banner-wrap h1 {
+    font-size: 52px;
+    margin-bottom: 40px;
+  }
+  .main-screen h2 {
+    margin-bottom: 36px;
+  }
+
+  .main-screen {
+    margin: 0 auto;
+    width: 477px;
+  }
+  .main-screen ul {
+    padding-bottom: 41px;
+    width: 100%;
+  }
+  .main-screen ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .main-screen ul li {
+    width: 221px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  span.logo {
+    /* margin-bottom: 40px; */
+    margin-top: 50px;
+    margin-left: 50px;
+  }
+  nav {
+    margin-top: 38px;
+    margin-right: 50px;
+    margin-bottom: 150px;
+  }
+}
+/* DESKTOP */
+@media screen and (min-width: 1199px) {
+  .main-screen h2 {
+    margin-bottom: 22px;
+  }
+
+  .main-screen ul {
+    display: inline-flex;
+    justify-content: space-around;
+    width: 940px;
+  }
+  .main-screen ul li {
+    width: 221px;
+  }
+  .banner-wrap {
+    background-image: url("../img/desktop/banner.png");
+    background-color: rgb(26, 25, 21);
+    padding-bottom: 233px;
+  }
+  .banner-wrap h1 {
+    font-size: 52px;
+    margin: 0 auto 46px auto;
+    width: 550px;
+  }
+  .banner-wrap p {
+    margin-bottom: 51px;
+    font-size: 24px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  span.logo {
+    /* margin-bottom: 40px; */
+    margin-top: 50px;
+    margin-left: 250px;
+  }
+  nav {
+    margin-top: 38px;
+    margin-right: 250px;
+    margin-bottom: 150px;
+  }
+  a.button {
+    width: 225px;
+  }
+}
 .main-screen h2 {
-  color: #333333;
   font-size: 22px;
-  margin-bottom: 19px;
+  font-family: "Montserrat Bold";
+  color: #333333;
 }
 .main-screen h3 {
-  margin-bottom: 22px;
   font-family: "Montserrat Bold";
 }
 .main-screen p {
   color: #666666;
-  margin-bottom: 23px;
-  font-size: 0.875rem;
 }
-.main-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 57px;
-  text-align: center;
-}
-.main-screen ul li {
-  max-width: 200px;
-}
-/* .main-screen ul li img {
-  margin-bottom: 25px;
-} */
+/* GENERAL RULES */
+
 .person-img {
   width: 120px;
   height: 120px;
@@ -215,8 +347,8 @@ nav {
   background-color: #4e73db;
   background-image: url("../img/mobile/icons/telegram.png");
 }
-
 .see-other-partners {
+  display: block;
   font-family: "Montserrat Bold";
   border: 2px solid #ff4e50;
   border-radius: 25px;
@@ -226,4 +358,28 @@ nav {
   line-height: 40px;
   text-decoration: none;
   color: #ff4e50;
+}
+.break {
+  display: block;
+}
+
+.main-screen {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 57px;
+}
+
+.main-screen h2 {
+  color: #333333;
+}
+
+.main-screen h3 {
+  color: #333333;
+  margin-bottom: 22px;
+}
+.main-screen p {
+  margin-bottom: 23px;
+  font-size: 0.875rem;
 }
