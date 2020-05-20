@@ -86,27 +86,44 @@ h2 {
   font-family: "Montserrat Bold";
 }
 
+nav button,
 span.logo {
-  /* display: block; */
+  box-sizing: border-box;
+  font-family: "Montserrat Bold";
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+/* HEADER */
+span.logo {
   font-size: 20px;
   text-transform: uppercase;
-  /* font-family: "Montserrat Bold"; */
+}
+nav {
+  display: inline-flex;
+}
+nav button {
+  font-size: 0.875rem;
+  line-height: 36px;
+  height: 40px;
+  color: #ffffff;
+  width: 100px;
+  border: 2px solid transparent;
+  background-color: transparent;
 }
 .banner-wrap {
-  background-image: url("../img/mobile/banner.png"); /* to show on screens less than 320 */
-  /* background-color: black; */
+  background-image: url("../img/mobile/banner.png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: auto;
   margin-bottom: 75px;
 }
-.banner-wrap h1 {
+h1 {
   text-transform: uppercase;
   font-family: "Montserrat Bold";
 }
-
-a.button {
+a.head-button {
   text-align: center;
   display: block;
   line-height: 40px;
@@ -119,52 +136,38 @@ a.button {
   color: #ffffff;
   border-radius: 25px;
 }
-nav button,
-span.logo {
-  box-sizing: border-box;
-  font-family: "Montserrat Bold";
-  display: inline-block;
-  vertical-align: middle;
-  text-decoration: none;
-  text-align: center;
-}
-nav button {
-  font-size: 0.875rem;
-  line-height: 36px;
-  height: 40px;
-  color: #ffffff;
-  width: 100px;
-  border: 2px solid transparent;
-  background-color: transparent;
-}
-
 .signup {
   border-color: white;
   border-radius: 25px;
 }
-
-nav {
-  display: inline-flex;
+.break {
+  display: inline-block;
 }
+
 /* MOBILE */
 @media screen and (min-width: 0px) and (max-width: 767px) {
-  .main-screen {
+  .break {
+    display: block;
+  }
+  header {
     display: flex;
-    text-align: center;
+    flex-direction: column-reverse;
+    justify-content: center;
   }
-  .main-screen ul {
-    padding-bottom: 21px;
+  .logo {
+    display: inline-flex;
+    margin-bottom: 40px;
   }
-  .main-screen h2 {
-    margin-bottom: 22px;
-  }
-  .main-screen ul li {
-    max-width: 200px;
+  nav {
+    margin-top: 20px;
+    justify-content: center;
+    margin-bottom: 119px;
   }
   .banner-wrap {
     background-image: url("../img/mobile/banner.png");
     padding-bottom: 138px;
   }
+
   a.button {
     width: 225px;
   }
@@ -177,29 +180,35 @@ nav {
     margin: 0 auto 20px auto;
   }
 
-  nav {
-    margin-bottom: 119px;
-  }
-  .logo {
-    margin-bottom: 40px;
-  }
-
-  header {
+  .main-screen {
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
+    text-align: center;
   }
-  .logo {
-    display: inline-flex;
+  .main-screen ul {
+    padding-bottom: 21px;
   }
-  nav {
-    margin-top: 20px;
-    justify-content: center;
-    margin-bottom: 119px;
+  h2 {
+    margin-bottom: 22px;
+  }
+  .main-screen ul li {
+    max-width: 200px;
   }
 }
 /* TABLET */
 @media screen and (min-width: 768px) and (max-width: 1199px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  span.logo {
+    margin-top: 50px;
+    margin-left: 50px;
+  }
+  nav {
+    margin-top: 38px;
+    margin-right: 50px;
+    margin-bottom: 150px;
+  }
   .banner-wrap {
     background-image: url("../img/tablet/banner.png");
     background-color: rgb(26, 25, 21);
@@ -209,13 +218,12 @@ nav {
   .banner-wrap p {
     font-size: 24px;
     margin: 0 auto 38px auto;
-    /* font-family: "Roboto Light"; */
   }
   .banner-wrap h1 {
     font-size: 52px;
     margin-bottom: 40px;
   }
-  .main-screen h2 {
+  h2 {
     margin-bottom: 36px;
   }
 
@@ -230,47 +238,16 @@ nav {
   .main-screen ul {
     display: inline-flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: reverse-row;
     justify-content: space-around;
   }
   .main-screen ul li {
     width: 221px;
-  }
-  header {
-    display: flex;
-    justify-content: space-between;
-  }
-  span.logo {
-    /* margin-bottom: 40px; */
-    margin-top: 50px;
-    margin-left: 50px;
-  }
-  nav {
-    margin-top: 38px;
-    margin-right: 50px;
-    margin-bottom: 150px;
   }
 }
 /* DESKTOP */
 @media screen and (min-width: 1199px) {
-  .main-screen h2 {
-    margin-bottom: 22px;
-  }
-
-  .main-screen ul {
-    display: inline-flex;
-    justify-content: space-around;
-    width: 940px;
-  }
-  .main-screen ul li {
-    width: 221px;
-  }
-  .banner-wrap {
-    background-image: url("../img/desktop/banner.png");
-    background-color: rgb(26, 25, 21);
-    padding-bottom: 233px;
-  }
-  .banner-wrap h1 {
+  h1 {
     font-size: 52px;
     margin: 0 auto 46px auto;
     width: 550px;
@@ -278,6 +255,11 @@ nav {
   .banner-wrap p {
     margin-bottom: 51px;
     font-size: 24px;
+  }
+  .banner-wrap {
+    background-image: url("../img/desktop/banner.png");
+    background-color: rgb(26, 25, 21);
+    padding-bottom: 233px;
   }
   header {
     display: flex;
@@ -296,13 +278,25 @@ nav {
   a.button {
     width: 225px;
   }
+  h2 {
+    margin-bottom: 22px;
+  }
+
+  .main-screen ul {
+    display: inline-flex;
+    justify-content: space-around;
+    width: 940px;
+  }
+  .main-screen ul li {
+    width: 221px;
+  }
 }
-.main-screen h2 {
+h2 {
   font-size: 22px;
   font-family: "Montserrat Bold";
   color: #333333;
 }
-.main-screen h3 {
+h3 {
   font-family: "Montserrat Bold";
 }
 .main-screen p {
@@ -318,7 +312,6 @@ nav {
   margin: 0 auto 25px auto;
 }
 .person-img::before {
-  /* box-sizing: content-box; */
   border: 3px solid white;
   border-radius: 50%;
   width: 31px;
@@ -329,7 +322,6 @@ nav {
   background-position: center;
   right: 0;
   bottom: 0;
-  z-index: 1000;
 }
 .one::before {
   background-color: #ff4e50;
@@ -359,9 +351,9 @@ nav {
   text-decoration: none;
   color: #ff4e50;
 }
-.break {
+/* .break {
   display: block;
-}
+} */
 
 .main-screen {
   display: flex;
@@ -370,12 +362,11 @@ nav {
   align-items: center;
   padding-bottom: 57px;
 }
-
-.main-screen h2 {
+h2 {
   color: #333333;
 }
 
-.main-screen h3 {
+h3 {
   color: #333333;
   margin-bottom: 22px;
 }
