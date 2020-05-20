@@ -310,6 +310,7 @@ h3 {
   display: block;
   position: relative;
   margin: 0 auto 25px auto;
+  border-radius: 50%;
 }
 .person-img::before {
   border: 3px solid white;
