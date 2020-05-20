@@ -139,12 +139,11 @@ a.head-button {
   border-radius: 25px;
 }
 .break {
-  display: inline-block;
+  display: block;
 }
-
 /* MOBILE */
-@media screen and (min-width: 0px) and (max-width: 767px) {
-  .break {
+@media screen and (max-width: 767px) {
+  .break-on-mobile-only {
     display: block;
   }
   header {
