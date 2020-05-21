@@ -142,7 +142,7 @@ a.head-button {
   display: block;
 }
 /* MOBILE */
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .break-on-mobile-only {
     display: block;
   }
